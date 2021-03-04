@@ -5,11 +5,13 @@ const app = express();
 const HOST = 'http://localhost:'
 const PORT = 3333;
 
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: false }));
 app.use(cors());
 
+app.get('./routes');
+
 app.get('/', (req, res) => {
-  res.send('HELLO ola mundo');
+  res.send('Atualizado');
 })
 
 app.listen(PORT, () => {
