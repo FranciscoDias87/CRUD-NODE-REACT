@@ -1,7 +1,7 @@
 {
   "name": "crud",
   "version": "1.0.0",
-  "description": "CRUD para adicionar, editar e excluir usuarios",
+  "description": "CRUD usando NODEJS e REACTJS para adicionar, atualizar e excluir usuarios",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",

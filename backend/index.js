@@ -2,7 +2,7 @@ const express = require('express');
 const cors = require('cors');
 
 const app = express();
-const HOST = 'http://localhost:'
+const HOST = 'http://localhost:';
 const PORT = 3333;
 
 app.use(express.urlencoded({ extended: false }));
@@ -11,11 +11,12 @@ app.use(cors());
 app.get('./routes');
 
 app.get('/', (req, res) => {
-  res.send('Atualizado');
+  res.send('Back-end sem error');
 })
 
 app.listen(PORT, () => {
-  console.log(`Serve started at: ${HOST}${PORT}`);
+  console.log(`Serve started at ${HOST}${PORT}`);
+  console.error();
 });
 
 
