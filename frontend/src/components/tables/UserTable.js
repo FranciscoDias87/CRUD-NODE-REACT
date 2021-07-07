@@ -14,7 +14,7 @@ const UserTable = props => (
         props.users.length > 0 ? (
           props.users.map(user => (
             <tr key={user.id}>
-              <td>{user.name}</td>
+              <td>${user.name}</td>
               <td>{user.username}</td>
               <td className='center-align'>
                 <button
@@ -31,7 +31,7 @@ const UserTable = props => (
           ))
         ) : (
           <tr>
-            <td colSpan={3}>{props.users[0]}NO USERS</td>
+            <td colSpan={3}>{props.users[0]}No users</td>
           </tr>
         )
       }
