@@ -4,12 +4,9 @@ import qs from 'querystring';
 
 import api from '../services/api';
 
+import UserTable from '../components/tables/UserTable';
 import AddUserForm from '../components/forms/AddUserForm';
 import EdidUserForm from '../components/forms/EditUserForm';
-import UserTable from '../components/tables/UserTable'
-
-
-
 
 class Home extends Component {
 
@@ -22,11 +19,11 @@ class Home extends Component {
       editing: false
     }
 
-  }
+  };
 
   componentDidMount() {
     this.refreshUserTable();
-  }
+  };
 
   refreshUserTable() {
     this.usersData = api.get('api')
@@ -37,21 +34,21 @@ class Home extends Component {
           setUsers: data.data
         });
       });
-  }
+  };
 
   addUser = user => {
     api.post('api', qs.stringify(user))
       .then(res => {
         this.refreshUserTable();
       });
-  }
+  };
 
   deleteUser = id => {
     api.delete(`api/${id}`)
       .then(res => {
         this.refreshUserTable();
       });
-  }
+  };
 
   updateUser = (id, user) => {
     api.put(`api/${id}`, qs.stringify(user))
@@ -63,7 +60,7 @@ class Home extends Component {
     });
 
     this.setEditing(false);
-  }
+  };
 
   editRow = user => {
     this.setState({
@@ -71,11 +68,11 @@ class Home extends Component {
     });
 
     this.setEditing(true);
-  }
+  };
 
   setEditing = isEditing => {
     this.setState({ editing: isEditing });
-  }
+  };
 
   render() {
     const { users } = this.state;
@@ -93,17 +90,16 @@ class Home extends Component {
                   currentUser={this.state.currentUser}
                   updateUser={this.updateUser}
                 />
-
               </div>
             ) : (
               <div className='col s12 l6'>
-                <h4>ADD USER</h4>
+                <h4>Add User</h4>
                 <AddUserForm addUser={this.addUser} />
               </div>
             )
           }
           <div className='col s12 l6'>
-            <h5>USERS</h5>
+            <h5>Users</h5>
             <UserTable
               users={users}
               editRow={this.editRow}

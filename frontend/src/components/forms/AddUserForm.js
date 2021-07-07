@@ -27,6 +27,7 @@ const AddUserForm = props => {
             <input
               type='text'
               id='name'
+              name='name'
               value={user.name}
               onChange={handleInputChange}
               required
@@ -39,7 +40,7 @@ const AddUserForm = props => {
           <div className='input-field col s12'>
             <input
               type='text'
-              id='name'
+              name='username'
               value={user.username}
               onChange={handleInputChange}
               required

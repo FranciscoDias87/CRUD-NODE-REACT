@@ -11,7 +11,7 @@ app.use(cors());
 app.get('./routes');
 
 app.get('/', (req, res) => {
-  res.send('Back-end sem error');
+  res.send('Back-end iniciado sem erro');
 })
 
 app.listen(PORT, () => {
